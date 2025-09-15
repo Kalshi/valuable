@@ -336,7 +336,7 @@ fn derive_enum(cx: Context, input: &syn::DeriveInput, data: &syn::DataEnum) -> R
                 visit_variants.push(quote! {
                     Self::#variant_name => {
                         visitor.visit_unnamed_fields(
-                            &[],
+                            &[::valuable::Value::String("")],
                         );
                     }
                 });
